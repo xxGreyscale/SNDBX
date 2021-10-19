@@ -1,0 +1,35 @@
+.footer-list {
+    li {
+        margin: auto 1rem;
+        font-size: .9rem;
+    }
+    &.left {
+        justify-content: flex-start;
+        li:nth-child(1) {
+            opacity: .4;
+            margin-left: 0rem;
+            margin-right: 6rem;
+        }
+    }
+    &.right {
+        justify-content: flex-end;
+    }
+
+}
+
+.content-bar {
+    justify-content: space-between;
+}
+
+footer {
+    margin-top: 8rem;
+}
+
+h5 {
+    small {
+        font-family: var(--id8-primary-font);
+        font-weight: 600;
+        font-size: .8em;
+        opacity: .5;
+    }
+}

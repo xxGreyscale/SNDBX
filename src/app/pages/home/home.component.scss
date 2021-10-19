@@ -1,0 +1,170 @@
+//******************* Classes *******************//
+
+.bg-hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+                        url(../../../assets/img/hero.jpg);
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .hero-text {
+        h1 {
+            font-size: 9rem;
+
+
+            span.hero-caption {
+                font-size: 2rem;
+                color: var(--id-primary-color);
+                font-weight: 400;
+            }
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 200;
+            font-family: var(--id8-secondary-font);
+        }
+
+    }
+
+    button {
+        font-size: calc(12px + .2vw) !important;
+        padding: 1rem 2rem;
+        background-color: var(--id-secondary);
+    }
+}
+
+
+h2 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+h2.work-spaces-heading {
+    margin: 8rem 0rem;
+}
+
+.image-holder, .image-holder-2 {
+    display: block;
+    position: relative;
+    height: 100%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        // transform: scaleX(-1);
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+    
+    img {
+        object-fit: cover;
+        position: absolute;
+        width: 50%;
+        border-radius: .35rem;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        
+        transform: translate(-50%,-50%);
+        /* or 3d alternative if you will add animations (smoother transitions) */
+        transform: translate3d(-50%,-50%,0);
+    }
+
+    .img1 {
+        transform: translate(-40%,-100%);
+    }
+
+    .img2 {
+        transform: translate(-80%,-40%);
+    }
+
+    .img3 {
+        transform: translate(-30%,20%);
+    }
+}
+
+
+.image-holder::before {
+    top: 2rem;
+    left: -5rem;
+    transform: scale(1.2);
+    background-size: contain;
+    background-image: url(../../../assets/svg/blob-2.svg);
+}
+
+.image-holder-2::before {
+    top: 2rem;
+    right: -4rem;
+    transform: scale(1);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../../assets/svg/blob-1.svg);
+}
+
+.image-holder-2 {
+    img {
+        width: 65%;
+        right: 50%;
+        top: 50%;
+        
+        transform: translate(-50%,-50%);
+        /* or 3d alternative if you will add animations (smoother transitions) */
+        transform: translate3d(-50%,-50%,0);
+    }
+    .img2 {
+        transform: translate(-50%,-70%);
+    }
+
+    .img3 {
+        transform: translate(-20%,-10%);
+    }
+}
+
+
+
+// form 
+.contacts-form {
+    color: var(--id-black);
+    font-size: 16px !important;
+    border-radius: .275rem;
+    padding: 2.85rem 3.5rem;
+    padding-bottom: 4rem;
+    background-color: var(--id-white);
+    box-shadow: 0rem .275rem 1rem rgba(0, 0, 0, .4);
+    label {
+        color: var(--id-black);
+        margin: .725rem 0rem;
+    }
+
+    input {
+        width: 90%;
+        height: 48px;
+    }
+}
+
+.form-img {
+    object-fit: cover;
+}
+
+.form-img-holder {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    img {
+        position: absolute;
+        right: -5rem;
+    }
+}
+
+.form {
+    margin-top: 10rem;
+}
+
+
+.space-listing {
+    margin: 8rem 4rem;
+}

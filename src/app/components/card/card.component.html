@@ -1,0 +1,17 @@
+
+<div class="card" *ngIf="package">
+    <h3> {{ package.name }} </h3>
+    <p class="description mt-2 mb-5" [innerHTML]='package.description'>
+        
+    </p>
+
+    <ul *ngIf="package.listing">
+        <li *ngFor="let listing of package.listing">
+            {{ listing }}
+        </li>
+    </ul>
+
+    <div class="price-tag">
+        Tsh {{ package.price }}
+    </div>
+</div>
