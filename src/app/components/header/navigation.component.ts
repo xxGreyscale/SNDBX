@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
    }
 
 
-   document.getElementById("contact-email")?.focus()
+   document.getElementById("company-name ")?.focus()
   }
 
 }

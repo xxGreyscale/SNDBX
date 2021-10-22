@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, retry } from 'rxjs/operators';
+
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +12,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  packageOption: any;
+
+  sendEmailAPI: string = 'https://hqp2yknuhd.execute-api.eu-west-1.amazonaws.com/prod/contact-us'
+
+  
 
   emailSent: Boolean = false;
   loading: Boolean = false;
@@ -107,7 +118,7 @@ export class HomeComponent implements OnInit {
 
     // form instance
  contactusForm = new FormGroup({
-  name: new FormControl('', [
+  contactName: new FormControl('', [
     Validators.pattern('[a-zA-Z ]*'),
     Validators.maxLength(155),
     Validators.required
@@ -130,17 +141,19 @@ export class HomeComponent implements OnInit {
     Validators.required
   ])
  })
+  targetValue: any;
+  packageOptionSelected: any;
 
  get email(): any {
    return this.contactusForm.get('email')
  }
 
  get phone(): any {
-  return this.contactusForm.get('email')
+  return this.contactusForm.get('phone')
 }
 
- get name(): any {
-  return this.contactusForm.get('name')
+ get contactName(): any {
+  return this.contactusForm.get('contactName')
 }
 
 get companyName(): any {
@@ -153,15 +166,72 @@ get companyName(): any {
 
 
 
-  constructor() { }
+  constructor(private htppClient: HttpClient) {
+    console.log(this.loading, this.emailSent);
+    
+   }
 
   ngOnInit(): void {
+  }
+
+  sendEmail(payload: any): Observable<any> {
+    const headers = { 'Content-Type': 'application/json; charset=utf-8'};
+    return this.htppClient.post<any>(this.sendEmailAPI, payload, { headers })
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+      )
   }
 
 
 
   onSubmit(): void{
+    // take the data and validate it
+    this.loading = true
+    const formData = this.contactusForm.value;
+    const payload = {
+      companyName: formData.companyName,
+      contactName: formData.contactName,
+      email: formData.email,
+      phone: formData.phone,
+      space: this.packageOptionSelected,
+      message: formData.message
+    }
 
+    this.emailSent = false
+    // console.log(this.sendEmail(payload));
+    
+    this.sendEmail(payload).subscribe( response => {
+      this.emailSent = true
+      this.loading = false
+    })
   }
 
+  onChange(targetValue: any) {
+
+    this.packageOption = targetValue.value === 'workspace' ? this.packages : this.eventSpacePackages;
+  }
+
+  onPackageSelected(target: any): void {
+    this.packageOptionSelected = target.value
+  }
+
+
+  handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(
+      'Something bad happened; please try again later.');
+  }
+
+
 }
+

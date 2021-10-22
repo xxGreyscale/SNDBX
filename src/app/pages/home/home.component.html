@@ -95,8 +95,8 @@
 
                     <div class="form-group my-4">
                         <label for="">Name of Contact</label>
-                        <input type="text" class="form-control" formControlName="name" placeholder="John Doe" name="name" id="contact-name" aria-describedby="nameId" >
-                        <small class="text-danger font-weight-bold p-2" *ngIf="name.touched && name.invalid">
+                        <input type="text" class="form-control" formControlName="contactName" placeholder="John Doe" name="name" id="contact-name" aria-describedby="nameId" >
+                        <small class="text-danger font-weight-bold p-2" *ngIf="contactName.touched && contactName.invalid">
                             **Inavalid name of contact
                         </small>
                       </div>
@@ -118,6 +118,25 @@
                             **Inavalid phone number
                         </small>
                       </div>
+
+                      <div class="form-group my-4">
+                        <label for="">Space </label>
+                        <select (change)="onChange($event.target)" class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+                            <option value="" selected>Select a space option</option>
+                            <option value="workspace">Work Space</option>
+                            <option value="event">Event Space</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group my-4" *ngIf="packageOption">
+                        <label for="">Select Package </label>
+                        <select (change)="onPackageSelected($event.target)" class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+                            <option value="" selected>Select a space option</option>
+                            <option *ngFor="let package of packageOption">{{ package.name }}</option>
+                          </select>
+                      </div>
+
+                      
 
                     <div class="form-group my-4">
                         <label for="">Additional comments</label>

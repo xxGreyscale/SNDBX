@@ -139,9 +139,12 @@ h2.work-spaces-heading {
         margin: .725rem 0rem;
     }
 
-    input {
+    .form-group {
         width: 90%;
-        height: 48px;
+
+        input {
+            height: 48px;
+        }
     }
 }
 
