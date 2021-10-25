@@ -122,7 +122,7 @@ h2.work-spaces-heading {
     @media only screen and (min-width: 720px) {
         top: 2rem;
         left: -5rem;
-        transform: scale(1.2);
+        transform: scale(1);
 
     }
 }
@@ -142,7 +142,7 @@ h2.work-spaces-heading {
 
 .image-holder-2 {
     img {
-        left: 75%;
+        left: 64%;
         top: 48%;
         width: 100%;
         transform: translate(-50%,-50%);
@@ -153,7 +153,7 @@ h2.work-spaces-heading {
         }
     }
     .img2 {
-        transform: translate(-80%,-70%);
+        transform: translate(-72%,-70%);
 
         @media only screen and (min-width: 720px) {
             transform: translate(-50%,-70%);
@@ -220,7 +220,7 @@ h2.work-spaces-heading {
         
         @media only screen and (min-width: 720px) {
             position: absolute;
-            right: -5rem;
+            right: -4rem;
         }
     }
 
@@ -234,6 +234,6 @@ h2.work-spaces-heading {
 
 .space-listing {
     @media only screen and (min-width: 720px) {
-        margin: 8rem 4rem;
+        margin: 8rem 0rem;
     }
 }

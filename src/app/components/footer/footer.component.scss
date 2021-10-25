@@ -9,6 +9,10 @@
             opacity: .4;
             margin-left: 0rem;
             margin-right: 6rem;
+
+            @media only screen and (max-width: 720px) {
+                margin: 2rem auto;
+            }
         }
     }
     &.right {
@@ -18,7 +22,11 @@
 }
 
 .content-bar {
-    justify-content: space-between;
+    justify-content: center;
+
+    @media only screen and (min-width: 720px) {
+        justify-content: space-between;
+    }
 }
 
 footer {
