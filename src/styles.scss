@@ -74,6 +74,11 @@ $form-factors: xs, md, lg, xl, xxl;
 }
 
 
+section {
+  width: 100%;
+}
+
+
 ul.navbar-nav {
   display: flex;
   justify-content: space-between;

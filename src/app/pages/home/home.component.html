@@ -27,7 +27,7 @@
     </h2>
 
     <div class="row mt-5 container">
-        <div class="col w-100">
+        <div class="col-12 col-md w-100">
             <div class="d-flex justify-content-end align-items-center h-100">
                 <div class="image-holder w-100">
                     <img class="img1" src="assets/img/hotdesk.jpg">
@@ -36,9 +36,9 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md">
             <div class="row" *ngIf='packages && packages!.length > 0'>
-                <div class="col-6 my-4" *ngFor="let package of packages">
+                <div class="col-12 col-md-6 my-4" *ngFor="let package of packages">
                     <app-card [package]='package'></app-card>    
                 </div>
             </div>
@@ -56,15 +56,15 @@
  
      <div class="row mt-5 container">
 
-        <div class="col">
+        <div class="col-12 col-md col-lg order-2 order-md-1">
             <div class="row" *ngIf='eventSpacePackages && eventSpacePackages!.length > 0'>
-                <div class="col-6 my-4" *ngFor="let package of eventSpacePackages">
+                <div class="col-12 col-md-6 my-4" *ngFor="let package of eventSpacePackages">
                     <app-card [package]='package'></app-card>    
                 </div>
             </div>
         </div>
 
-         <div class="col w-100">
+         <div class="col-12 col-md col-lg w-100 order-1 order-md-2">
              <div class="d-flex justify-content-end align-items-center h-100">
                  <div class="image-holder-2 w-100">
                      <img class="img2" src="assets/img/desks.jpg">
@@ -80,7 +80,7 @@
  <section class="my-5">
     <div class="container form">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-md">
                 <form [formGroup]="contactusForm" (ngSubmit)="onSubmit()" class="mt-n5 contacts-form" id="contacts-form">
                     <h2 class="mx-0">
                         Talk to us
@@ -162,7 +162,7 @@
                       </button>
                 </form>
             </div>
-            <div class="col">
+            <div class="col-12 col-md">
                 <div class="my-auto w-100 h-100 align-items-center form-img-holder">
                     <img src="assets/svg/footie.svg" alt="" width="100%">
                     
