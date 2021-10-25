@@ -73,6 +73,27 @@ h2.work-spaces-heading {
     @media only screen and (max-width: 600px) {
         min-height: 400px;
         transform: scale(1);
+
+        img {
+            width: 80% !important;
+        }
+
+        &::before {
+            width: 100% !important;
+        }
+    }
+
+    @media only screen and (min-width: 767px) and (max-width: 991px) {
+        min-height: 624px;
+        transform: scale(1);
+
+        img {
+            width: 50% !important;
+        }
+
+        &::before {
+            width: 80% !important;
+        }
     }
 
     &::before {
@@ -87,7 +108,7 @@ h2.work-spaces-heading {
     img {
         object-fit: cover;
         position: absolute;
-        width: 80%;
+        width: 60%;
         border-radius: .35rem;
         height: auto;
         left: 50%;
@@ -120,6 +141,12 @@ h2.work-spaces-heading {
 
     
     @media only screen and (min-width: 720px) {
+        top: 0rem;
+        left: 0rem;
+    }
+
+
+    @media only screen and (min-width: 992px) {
         top: 2rem;
         left: -5rem;
         transform: scale(1);
@@ -183,8 +210,13 @@ h2.work-spaces-heading {
     box-shadow: 0rem .275rem 1rem rgba(0, 0, 0, .4);
     
     @media only screen and (min-width: 720px) {
+        padding: 2.85rem 1.5rem;
+    }
+
+    @media only screen and (min-width: 992px) {
         padding: 2.85rem 3.5rem;
     }
+
     label {
         color: var(--id-black);
         margin: .725rem 0rem;
@@ -193,7 +225,7 @@ h2.work-spaces-heading {
     .form-group {
         width: 100%;
 
-        @media only screen and (min-width: 720px) {
+        @media only screen and (min-width: 992) {
             width: 90%;
         }
 
@@ -219,6 +251,11 @@ h2.work-spaces-heading {
     img {
         
         @media only screen and (min-width: 720px) {
+            position: absolute;
+            right: -2rem;
+        }
+
+        @media only screen and (min-width: 992px) {
             position: absolute;
             right: -4rem;
         }

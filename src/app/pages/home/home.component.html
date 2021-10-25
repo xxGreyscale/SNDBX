@@ -27,7 +27,7 @@
     </h2>
 
     <div class="row mt-5 container">
-        <div class="col-12 col-md w-100">
+        <div class="col-12 col-md-12 col-lg w-100">
             <div class="d-flex justify-content-end align-items-center h-100">
                 <div class="image-holder w-100">
                     <img class="img1" src="assets/img/hotdesk.jpg">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md">
+        <div class="col-12 col-md-12 col-lg">
             <div class="row" *ngIf='packages && packages!.length > 0'>
                 <div class="col-12 col-md-6 my-4" *ngFor="let package of packages">
                     <app-card [package]='package'></app-card>    
@@ -54,9 +54,9 @@
          Event Space Price Listing
      </h2>
  
-     <div class="row mt-5 container">
+     <div class="row mt-5 mt-md-0 container">
 
-        <div class="col-12 col-md col-lg order-2 order-md-1">
+        <div class="col-12 ol-md-12 col-lg order-2 order-md-2 order-lg-1">
             <div class="row" *ngIf='eventSpacePackages && eventSpacePackages!.length > 0'>
                 <div class="col-12 col-md-6 my-4" *ngFor="let package of eventSpacePackages">
                     <app-card [package]='package'></app-card>    
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-         <div class="col-12 col-md col-lg w-100 order-1 order-md-2">
+         <div class="col-12 ol-md-12 col-lg w-100 order-1 order-md-1 order-lg-2">
              <div class="d-flex justify-content-end align-items-center h-100">
                  <div class="image-holder-2 w-100">
                      <img class="img2" src="assets/img/desks.jpg">
