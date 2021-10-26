@@ -1,175 +1,255 @@
 <section>
     <div class="d-flex w-100 bg-hero">
-        <div class="hero-text text-center">
-            <h1 class="text-white">
-                SNDBX 
-                <span class="hero-caption"> by id8.space</span>
-            </h1>
+      <div class="cont">
+        <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1165.533 1165.533">
+            <linearGradient id="PSgrad_0" x1="70.711%" x2="0%" y1="70.711%" y2="0%">
+              <stop offset="0%" stop-color="#f7b20c" stop-opacity=".3" />
+              <stop offset="100%" stop-color="#f7b20c" stop-opacity=".4" />
+            </linearGradient>
+            <path fill="url(#PSgrad_0)" transform="translate(559.297 -205.992) rotate(45) scale(1)"/>
+            </svg>
+      </div>
+    <div class="hero-text text-center">
+      <h1 class="text-white">
+        SNDBX
+        <span class="hero-caption"> by id8.space</span>
+      </h1>
 
-            <h3 class="text-white">
-                START. GROW. SCALE.
-            </h3>
-        </div>
-
-        <button type="button" class="btn btn-lg my-4 btn-danger">
-            Come take a tour
-        </button>
-
-
+      <h3 class="text-white font-weight-bold">START. GROW. SCALE.</h3>
+      <button type="button" class="btn btn-lg my-4 btn-danger">
+        Come take a tour
+      </button>
     </div>
+
+  </div>
 </section>
 
-
 <section class="space-listing">
-   <div class="container">
+  <div class="container">
     <h2 class="text-uppercase text-center work-spaces-heading">
-        Work Space Price Listing
+      Work Space Price Listing
     </h2>
 
     <div class="row mt-5 container">
-        <div class="col-12 col-md-12 col-lg w-100">
-            <div class="d-flex justify-content-end align-items-center h-100">
-                <div class="image-holder w-100">
-                    <img class="img1" src="assets/img/hotdesk.jpg">
-                    <img class="img2" src="assets/img/desks.jpg">
-                    <img class="img3" src="assets/img/lounge.jpg">
-                </div>
-            </div>
+      <div class="col-12 col-md-12 col-lg w-100">
+        <div class="d-flex justify-content-end align-items-center h-100">
+          <div class="image-holder w-100">
+            <img class="img1" src="assets/img/hotdesk.jpg" />
+            <img class="img2" src="assets/img/desks.jpg" />
+            <img class="img3" src="assets/img/lounge.jpg" />
+          </div>
         </div>
-        <div class="col-12 col-md-12 col-lg">
-            <div class="row" *ngIf='packages && packages!.length > 0'>
-                <div class="col-12 col-md-6 my-4" *ngFor="let package of packages">
-                    <app-card [package]='package'></app-card>    
-                </div>
-            </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg">
+        <div class="row" *ngIf="packages && packages!.length > 0">
+          <div class="col-12 col-md-6 my-4" *ngFor="let package of packages">
+            <app-card [package]="package"></app-card>
+          </div>
         </div>
+      </div>
     </div>
-   </div>
+  </div>
 </section>
 
-
 <section class="space-listing">
-    <div class="container">
-     <h2 class="text-uppercase text-center work-spaces-heading">
-         Event Space Price Listing
-     </h2>
- 
-     <div class="row mt-5 mt-md-0 container">
+  <div class="container">
+    <h2 class="text-uppercase text-center work-spaces-heading">
+      Event Space Price Listing
+    </h2>
 
-        <div class="col-12 ol-md-12 col-lg order-2 order-md-2 order-lg-1">
-            <div class="row" *ngIf='eventSpacePackages && eventSpacePackages!.length > 0'>
-                <div class="col-12 col-md-6 my-4" *ngFor="let package of eventSpacePackages">
-                    <app-card [package]='package'></app-card>    
-                </div>
-            </div>
+    <div class="row mt-5 mt-md-0 container">
+      <div class="col-12 ol-md-12 col-lg order-2 order-md-2 order-lg-1">
+        <div
+          class="row"
+          *ngIf="eventSpacePackages && eventSpacePackages!.length > 0"
+        >
+          <div
+            class="col-12 col-md-6 my-4"
+            *ngFor="let package of eventSpacePackages"
+          >
+            <app-card [package]="package"></app-card>
+          </div>
         </div>
+      </div>
 
-         <div class="col-12 ol-md-12 col-lg w-100 order-1 order-md-1 order-lg-2">
-             <div class="d-flex justify-content-end align-items-center h-100">
-                 <div class="image-holder-2 w-100">
-                     <img class="img2" src="assets/img/desks.jpg">
-                     <img class="img3" src="assets/img/lounge.jpg">
-                 </div>
-             </div>
-         </div>
-        
-     </div>
-    </div>
- </section>
-
- <section class="my-5">
-    <div class="container form">
-        <div class="row">
-            <div class="col-12 col-md">
-                <form [formGroup]="contactusForm" (ngSubmit)="onSubmit()" class="mt-n5 contacts-form" id="contacts-form">
-                    <h2 class="mx-0">
-                        Talk to us
-                    </h2>
-                    <div class="form-group my-4">
-                      <label for="">Company Name</label>
-                      <input type="text" class="form-control" formControlName="companyName" placeholder="John Doe Co" name="companyName" id="company-name" aria-describedby="CompanyNameId" >
-                      <small class="text-danger font-weight-bold p-2" *ngIf="companyName.touched && companyName.invalid">
-                          **Inavalid company name
-                      </small>
-                    </div>
-
-                    <div class="form-group my-4">
-                        <label for="">Name of Contact</label>
-                        <input type="text" class="form-control" formControlName="contactName" placeholder="John Doe" name="name" id="contact-name" aria-describedby="nameId" >
-                        <small class="text-danger font-weight-bold p-2" *ngIf="contactName.touched && contactName.invalid">
-                            **Inavalid name of contact
-                        </small>
-                      </div>
-
-                    <div class="form-group my-4">
-                        <label for="">Email</label>
-                        <input type="text" class="form-control" formControlName="email" placeholder="joe.doe@id8.space" name="email" id="contact-email" aria-describedby="emailId" >
-                        <small id="helpId" class="form-text text-muted" *ngIf="!email.touched">ex. joe.doe@id8.space</small>
-                        <small class="text-danger font-weight-bold p-2" *ngIf="email.touched && email.invalid">
-                            **Inavalid email
-                        </small>
-                      </div>
-
-                      <div class="form-group my-4">
-                        <label for="">Phone Number</label>
-                        <input type="number" class="form-control" formControlName="phone" placeholder="joe.doe@id8.space" name="phone" id="phone-id" aria-describedby="phoneId" >
-                        <small id="helpId" class="form-text text-muted" *ngIf="!email.touched">+255 xxx xxx xxx</small>
-                        <small class="text-danger font-weight-bold p-2" *ngIf="phone.touched && phone.invalid">
-                            **Inavalid phone number
-                        </small>
-                      </div>
-
-                      <div class="form-group my-4">
-                        <label for="">Space </label>
-                        <select (change)="onChange($event.target)" class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
-                            <option value="" selected>Select a space option</option>
-                            <option value="workspace">Work Space</option>
-                            <option value="event">Event Space</option>
-                          </select>
-                      </div>
-
-                      <div class="form-group my-4" *ngIf="packageOption">
-                        <label for="">Select Package </label>
-                        <select (change)="onPackageSelected($event.target)" class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
-                            <option value="" selected>Select a space option</option>
-                            <option *ngFor="let package of packageOption">{{ package.name }}</option>
-                          </select>
-                      </div>
-
-                      
-
-                    <div class="form-group my-4">
-                        <label for="">Additional comments</label>
-                        <textarea type="text" placeholder="Share your thoughts with us... (currently unavailble)" 
-                                    rows="3" 
-                                    class="form-control" 
-                                    formControlName="message"
-                                    name="message" 
-                                    id="message" 
-                                    aria-describedby="helpId" 
-                                    ></textarea>
-                      </div>
-
-                      <button type="submit" 
-                                id="" 
-                                [disabled]="!contactusForm.valid"
-                                [ngClass]="{'bg-success': emailSent}"
-                                class="btn btn-primary no-border btn-lg btn-block">
-                            <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            <span *ngIf="loading" class="sr-only">Sending mail...</span>
-                            <span *ngIf="!loading && !emailSent">Reach out</span>
-                            <span *ngIf="!loading && emailSent"><i class="bi bi-check"></i> Email sent..</span>
-                      </button>
-                </form>
-            </div>
-            <div class="col-12 col-md">
-                <div class="my-auto w-100 h-100 align-items-center form-img-holder">
-                    <img src="assets/svg/footie.svg" alt="" width="100%">
-                    
-
-                </div>
-
-            </div>
+      <div class="col-12 ol-md-12 col-lg w-100 order-1 order-md-1 order-lg-2">
+        <div class="d-flex justify-content-end align-items-center h-100">
+          <div class="image-holder-2 w-100">
+            <img class="img2" src="assets/img/desks.jpg" />
+            <img class="img3" src="assets/img/lounge.jpg" />
+          </div>
         </div>
+      </div>
     </div>
- </section>
+  </div>
+</section>
+
+<section class="my-5">
+  <div class="container form">
+    <div class="row">
+      <div class="col-12 col-md">
+        <form
+          [formGroup]="contactusForm"
+          (ngSubmit)="onSubmit()"
+          class="mt-n5 contacts-form"
+          id="contacts-form"
+        >
+          <h2 class="mx-0">Talk to us</h2>
+          <div class="form-group my-4">
+            <label for="">Company Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="companyName"
+              placeholder="John Doe Co"
+              name="companyName"
+              id="company-name"
+              aria-describedby="CompanyNameId"
+            />
+            <small
+              class="text-danger font-weight-bold p-2"
+              *ngIf="companyName.touched && companyName.invalid"
+            >
+              **Inavalid company name
+            </small>
+          </div>
+
+          <div class="form-group my-4">
+            <label for="">Name of Contact</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="contactName"
+              placeholder="John Doe"
+              name="name"
+              id="contact-name"
+              aria-describedby="nameId"
+            />
+            <small
+              class="text-danger font-weight-bold p-2"
+              *ngIf="contactName.touched && contactName.invalid"
+            >
+              **Inavalid name of contact
+            </small>
+          </div>
+
+          <div class="form-group my-4">
+            <label for="">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="email"
+              placeholder="joe.doe@id8.space"
+              name="email"
+              id="contact-email"
+              aria-describedby="emailId"
+            />
+            <small
+              id="helpId"
+              class="form-text text-muted"
+              *ngIf="!email.touched"
+              >ex. joe.doe@id8.space</small
+            >
+            <small
+              class="text-danger font-weight-bold p-2"
+              *ngIf="email.touched && email.invalid"
+            >
+              **Inavalid email
+            </small>
+          </div>
+
+          <div class="form-group my-4">
+            <label for="">Phone Number</label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="phone"
+              placeholder="joe.doe@id8.space"
+              name="phone"
+              id="phone-id"
+              aria-describedby="phoneId"
+            />
+            <small
+              id="helpId"
+              class="form-text text-muted"
+              *ngIf="!email.touched"
+              >+255 xxx xxx xxx</small
+            >
+            <small
+              class="text-danger font-weight-bold p-2"
+              *ngIf="phone.touched && phone.invalid"
+            >
+              **Inavalid phone number
+            </small>
+          </div>
+
+          <div class="form-group my-4">
+            <label for="">Space </label>
+            <select
+              (change)="onChange($event.target)"
+              class="form-select form-select-md mb-3"
+              aria-label=".form-select-lg example"
+            >
+              <option value="" selected>Select a space option</option>
+              <option value="workspace">Work Space</option>
+              <option value="event">Event Space</option>
+            </select>
+          </div>
+
+          <div class="form-group my-4" *ngIf="packageOption">
+            <label for="">Select Package </label>
+            <select
+              (change)="onPackageSelected($event.target)"
+              class="form-select form-select-md mb-3"
+              aria-label=".form-select-lg example"
+            >
+              <option value="" selected>Select a space option</option>
+              <option *ngFor="let package of packageOption">
+                {{ package.name }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group my-4">
+            <label for="">Additional comments</label>
+            <textarea
+              type="text"
+              placeholder="Share your thoughts with us... (currently unavailble)"
+              rows="3"
+              class="form-control"
+              formControlName="message"
+              name="message"
+              id="message"
+              aria-describedby="helpId"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            id=""
+            [disabled]="!contactusForm.valid"
+            [ngClass]="{ 'bg-success': emailSent }"
+            class="btn btn-primary no-border btn-lg btn-block"
+          >
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            <span *ngIf="loading" class="sr-only">Sending mail...</span>
+            <span *ngIf="!loading && !emailSent">Reach out</span>
+            <span *ngIf="!loading && emailSent"
+              ><i class="bi bi-check"></i> Email sent..</span
+            >
+          </button>
+        </form>
+      </div>
+      <div class="col-12 col-md">
+        <div class="my-auto w-100 h-100 align-items-center form-img-holder">
+          <img src="assets/svg/footie.svg" alt="" width="100%" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
