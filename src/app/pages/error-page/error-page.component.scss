@@ -1,0 +1,46 @@
+section#not_found_page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: auto auto;
+    div.error-block {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+
+        a.btn {
+            margin: 0rem auto;
+            line-height: calc(1.25em * 1.8);
+            font-size: 1.25em;
+            font-weight: 500;
+            border: 1px solid #ddd
+        }
+    }
+}
+
+div.socials {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &::ng-deep {
+        ul {
+            justify-content: center;
+            width: 100%;
+            margin-bottom: .275rem;
+        }
+        li {
+            margin: 0rem .5rem;
+            width: max-content;
+        }
+        li:nth-child(1) {
+            margin-left: 0rem;
+        }
+        img {
+            max-width: 99%;
+        }
+
+    }
+}
