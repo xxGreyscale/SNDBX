@@ -232,6 +232,19 @@ get companyName(): any {
       'Something bad happened; please try again later.');
   }
 
+  // go to form
+  goToContactsForm() {
+    document.getElementById("contacts-form")?.scrollIntoView({
+     behavior: "smooth",
+     block: "start",
+     inline: "nearest"
+    })
+
+
+   document.getElementById("company-name")?.focus()
+  }
+ 
+
 
 }
 

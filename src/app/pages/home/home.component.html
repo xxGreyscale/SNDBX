@@ -6,7 +6,7 @@
               <stop offset="0%" stop-color="#f7b20c" stop-opacity=".3" />
               <stop offset="100%" stop-color="#f7b20c" stop-opacity=".4" />
             </linearGradient>
-            <path fill="url(#PSgrad_0)" transform="translate(559.297 -205.992) rotate(45) scale(1)"/>
+            <path fill="url(#PSgrad_0)" transform="translate(596.297 -280.992) rotate(45) scale(1.1)"/>
             </svg>
       </div>
     <div class="hero-text text-center">
@@ -16,7 +16,7 @@
       </h1>
 
       <h3 class="text-white font-weight-bold">START. GROW. SCALE.</h3>
-      <button type="button" class="btn btn-lg my-4 btn-danger">
+      <button type="button" (click)="goToContactsForm()" class="btn btn-lg my-4 btn-danger">
         Come take a tour
       </button>
     </div>
@@ -229,7 +229,7 @@
             id=""
             [disabled]="!contactusForm.valid"
             [ngClass]="{ 'bg-success': emailSent }"
-            class="btn btn-primary no-border btn-lg btn-block"
+            class="btn no-border btn-lg btn-block"
           >
             <span
               *ngIf="loading"
